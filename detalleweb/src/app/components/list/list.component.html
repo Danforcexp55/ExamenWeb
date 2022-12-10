@@ -1,0 +1,24 @@
+<div style="text-align:center"class="p-3 mb-2 bg-warning text-dark">
+  <!--<button class="btn btn-success" (click)="initNewDeta()">INTRODUCIR DATOS</button>-->
+  </div>
+  <div style="text-align:center">
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Detalle</th>
+      <th scope="col">Fecha</th>
+      <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let deta of detalles">
+        <td scope="row">{{ deta.id }}</td>
+        <td>{{ deta.detalle }}</td>
+        <td>{{ deta.fecha}}</td>
+        <td><button class="btn btn-warning" (click)="editDeta(deta)">Modificar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <app-edit [deta]="detaToEdit" (detaUpdated)="updateDetalleList($event)"></app-edit>
+  </div>

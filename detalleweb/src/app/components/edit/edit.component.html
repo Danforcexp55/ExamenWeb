@@ -1,0 +1,19 @@
+<div *ngIf="deta">
+  <div class="card">
+    <div class="card-body">
+      <div class="p-3 mb-2 bg-warning text-white">
+        Detalle:
+        <input [(ngModel)] = "deta.detalle" placeholder="Detalle" />
+    </div>
+    <div class="p-3 mb-2 bg-warning text-white">
+      Fecha:
+      <input type="date" [(ngModel)] = "deta.fecha" placeholder="Fecha" />
+    </div>
+    <button class="btn btn-primary" (click)="updateDetalle(deta)" *ngIf="deta.id">Guardar</button>
+    <button class="btn btn-danger" (click)="deleteDetalle(deta)" *ngIf="deta.id">Borrar</button>
+    <button class="btn btn-primary" (click)="createDetalle(deta)" *ngIf="!deta.id">Crear</button>
+    </div>
+    </div>
+  </div>
+
+
